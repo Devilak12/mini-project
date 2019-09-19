@@ -9,6 +9,7 @@ int n=0; //used in Quantity and Records.txt
 int k=0;
 int ba=0;
 int ti=0;
+int *g;
 struct item
 {
 	int productno;
@@ -32,7 +33,7 @@ void create()
 	printf("\n");
 	FILE *fpq;
 	fpq=fopen("Quantity.txt","w");
-	fprintf(fp,"productno\t,ProductName\t, Quantity\t, Price\n");
+	//fprintf(fp,"productno\t,ProductName\t, Quantity\t, Price\n");
 	fprintf(fpq,"%d",n);
 	fclose(fpq);
 	while(i<n)
@@ -55,6 +56,7 @@ void create()
 		fputs(item.productname,fp);
 		fprintf(fp,"\t%d\t%d\n",item.quantity,item.price);
 	}
+	g=fp;
 	fclose(fp);
 	printf("\t");
 	printf("Records are Created");
